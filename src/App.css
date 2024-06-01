@@ -5,7 +5,8 @@
 
 .container {
   background: linear-gradient(to right bottom, #e1b382, #c89666);
-  width: 100%;
+  width: 100vw;
+  min-width: fit-content;
   min-height: 100vh;
   display: flex;
   justify-content: center;
@@ -13,14 +14,12 @@
 }
 
 .app-wrapper {
-  background-color: #12343b;
-  min-width: 450px;
-  min-height: 650px;
-  padding: 30px;
-  box-sizing: border-box;
-  border-radius: 10px;
-  box-shadow: 3px 6px 40px #000;
-  margin-bottom: 10px;
+ background-color: #12343b;
+ padding: 3%;
+ box-sizing: border-box;
+ border-radius: 10px;
+ box-shadow: 3px 6px 40px #000;
+ margin-bottom: 10px;
 }
 
 .header h1 {
@@ -29,35 +28,47 @@
   margin: 30px 0;
 }
 
+.form {
+ display: flex;
+ justify-content: space-between;
+ white-space: nowrap;
+}
+
 .task-input {
-  outline: none;
-  width: 260px;
-  padding: 15px;
-  margin-right: 25px;
-  font-size: 20px;
-  color: #ccc;
-  background-color: #000;
-  border: 1px solid #c89666;
-  border-radius: 10px;
+ outline: none;
+ padding: 15px;
+ font-size: 20px;
+ color: #ccc;
+ background-color: #000;
+ border: 1px solid #c89666;
+ border-radius: 10px;
+ flex: 1;
 }
 
 .button-add {
-  width: 70px;
-  padding: 15px 15px;
-  font-size: 20px;
-  border-radius: 10px;
-  border: 0;
-  background-color: #f1af71;
-  cursor: pointer;
+ padding: 15px;
+ font-size: 20px;
+ border-radius: 10px;
+ border: 0;
+ background-color: #f1af71;
+ cursor: pointer;
+ margin-left: 10px;
 }
 
 .list-item {
   display: flex;
   margin: 20px 0;
+  width: fit-content;
+  justify-content: space-between;
   border: 1px solid #ccc;
   border-radius: 10px;
-  padding: 10px;
+  padding: 10px 20px;
   max-height: 30px;
+}
+
+.action-btns {
+ display: flex;
+ white-space: nowrap;
 }
 
 .button-complete,
@@ -73,12 +84,12 @@
 
 .button-complete {
   color: #ff6c6c;
-  margin-right: 10px;
+  margin-right: 6%;
 }
 
 .button-edit {
   color: #e2d029;
-  margin-right: 10px;
+  margin-right: 6%;
 }
 
 .button-delete {
@@ -105,4 +116,28 @@
 input:focus,
 button:focus {
   outline: none;
+}
+
+/* Default styles for larger screens */
+@media (min-width: 600px) {
+ .app-wrapper {
+   min-width: 450px;
+   min-height: 650px;
+ }
+}
+
+/* Styles for medium-sized screens */
+@media (max-width: 599px) and (min-width: 400px) {
+ .app-wrapper {
+   min-width: 350px;
+   min-height: 650px;
+ }
+}
+
+/* Styles for small screens */
+@media (max-width: 399px) {
+ .app-wrapper {
+   min-width: 100%;
+   min-height: 650px;
+ }
 }
